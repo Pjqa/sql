@@ -1,0 +1,111 @@
+1) 
+SELECT COUNT(CountryCode) 
+FROM city
+WHERE CountryCode = 'USA';
+
+2)
+SELECT Population, LifeExpectancy, Name FROM country
+WHERE Code = 'ARG';
+
+3)
+SELECT Name, LifeExpectancy
+FROM country
+WHERE LifeExpectancy IS NOT NULL
+ORDER BY LifeExpectancy DESC
+LIMIT 10;
+
+4)
+SELECT city.name 
+FROM city 
+JOIN country ON country.capital=city.id 
+WHERE country.name='Spain';
+
+5)
+
+
+6)
+SELECT Name
+FROM city
+WHERE Name LIKE 'F%'
+LIMIT 25;
+
+7)
+
+8)
+SELECT Name, Population
+FROM country
+WHERE Population IS NOT NULL
+ORDER BY Population ASC
+LIMIT 17;
+
+9)
+SELECT COUNT(Name) FROM country;
+
+10)
+SELECT Name, CountryCode, Population
+FROM city
+ORDER BY CountryCode ASC
+LIMIT 10;
+
+SELECT Name, CountryCode, Population
+FROM city
+ORDER BY Population DESC
+LIMIT 10;
+
+11)
+SELECT Name, CountryCode, Population
+FROM city
+WHERE CountryCode = 'JPN'
+ORDER BY Population DESC
+LIMIT 5;
+
+12) Elizabeth spelt wrong
+
+13)
+SELECT Name, Population/SurfaceArea
+FROM country
+WHERE Population/SurfaceArea>0
+ORDER BY Population/SurfaceArea ASC
+LIMIT 17;
+
+14)
+SELECT DISTINCT Language
+FROM countrylanguage;
+
+15)
+SELECT Name, GNP
+FROM country
+ORDER BY GNP DESC
+LIMIT 10;
+
+16) 
+SELECT Name, COUNT(Language) as Language_count
+FROM country
+JOIN countrylanguage on country.code = countrylanguage.countrycode
+GROUP BY Name
+ORDER BY language_count DESC
+LIMIT 10;
+
+17)
+SELECT CountryCode, Language, Percentage
+FROM countrylanguage
+WHERE Language = 'German' AND countrylanguage.Percentage > 50.0
+ORDER BY CountryCode ASC;
+
+18)
+SELECT Name, LifeExpectancy
+FROM country
+WHERE LifeExpectancy IS NOT NULL
+ORDER BY LifeExpectancy ASC
+LIMIT 10;
+
+19)
+SELECT GovernmentForm, COUNT(GovernmentForm) 
+FROM country
+GROUP BY GovernmentForm 
+ORDER BY COUNT(GovernmentForm) DESC
+LIMIT 3;
+
+ 20)
+
+
